@@ -1,0 +1,26 @@
+---
+- hosts: all
+
+  roles:
+    - preconf
+    - mysql
+    - php
+    - mailutils
+    - drush
+    - drupal
+
+  tasks:
+    - name: Install PHP MySQL module
+      apt: pkg=php5-mysql
+      sudo: yes
+
+    - name: Install php5 module for Apache 2
+      apt: pkg=libapache2-mod-php5
+      sudo: yes
+
+    - name: Enable php5 Apache module
+      command:
+        a2enmod php5
+        creates=/etc/apache2/mods-enabled/php5.conf
+      sudo: yes
+      notify: apache-restart
