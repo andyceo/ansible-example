@@ -31,7 +31,7 @@ Tip: You can install ansible from this [PPA](https://launchpad.net/~rquillo/+arc
         git submodule init
         git submodule update
         
-4. - Install andyceo roles from Ansible Galaxy:
+4. Install andyceo roles from Ansible Galaxy:
    
         ansible-galaxy install andyceo.preconf andyceo.mailutils andyceo.mc andyceo.git andyceo.php andyceo.apache andyceo.composer andyceo.drush andyceo.mysql andyceo.phpmyadmin andyceo.nginx --force
 
@@ -43,10 +43,10 @@ Tip: You can install ansible from this [PPA](https://launchpad.net/~rquillo/+arc
 
         ansible-playbook -K -k -v -i hosts -l <YOURTARGETHOSTNAME> example.yml --check --diff
 
-This will simulate playbook execute and show you posible difference that can be made by ansible. To execute playbook, just avoid `--check` and `--diff` modes:
+    This will simulate playbook execute and show you posible difference that can be made by ansible. To execute playbook, just avoid `--check` and `--diff` modes:
    
         ansible-playbook -K -k -v -i hosts -l <YOURTARGETHOSTNAME> example.yml
 
-Also, you can execute playbook with dynamic inventory:
+    Also, you can execute playbook with dynamic inventory:
 
         ansible-playbook -K -k -v -i hosts.py -l <YOURTARGETHOSTNAME> example.yml
