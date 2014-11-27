@@ -11,6 +11,9 @@ inventory = {
     }
 }
 
+# Add current local hostname to the hosts list
+inventory['workstations']['hosts'].append(socket.gethostname())
+
 def get_hosts_list():
     hosts = set()
     for k, v in inventory.items():
@@ -29,6 +32,7 @@ def print_help():
     print('Usage:')
     print('    hosts.py --help')
     print('    hosts.py --hosts')
+    print('    hosts.py --list [same as --hosts]')
     print('    hosts.py --host <hostname>')
 
 
@@ -36,7 +40,7 @@ def print_help():
 
 if __name__ == '__main__':
     try:
-        opts, args = getopt.getopt(sys.argv[1:],"h",["help", "hosts", "host="])
+        opts, args = getopt.getopt(sys.argv[1:],"h",["help", "hosts", "list", "host="])
     except getopt.GetoptError:
         print('Options error!')
         print_help()
