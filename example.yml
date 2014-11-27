@@ -1,26 +1,16 @@
 ---
+
 - hosts: all
 
   roles:
-    - preconf
-    - mysql
-    - php
-    - mailutils
-    - drush
-    - drupal
+    - andyceo.preconf
 
   tasks:
-    - name: Install PHP MySQL module
-      apt: pkg=php5-mysql
+    - name: Hello world!
+      debug:
+        msg="System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }}"
       sudo: yes
 
-    - name: Install php5 module for Apache 2
-      apt: pkg=libapache2-mod-php5
-      sudo: yes
-
-    - name: Enable php5 Apache module
-      command:
-        a2enmod php5
-        creates=/etc/apache2/mods-enabled/php5.conf
-      sudo: yes
-      notify: apache-restart
+    - name: Display all variables/facts known for a host
+      debug:
+        var=hostvars[inventory_hostname]
