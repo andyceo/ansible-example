@@ -12,8 +12,12 @@ This version of playbooks and roles was tested only on:
 
 Previous versions of Ansible and Ubuntu are not supported. If you interested in its support, please, provide patches.
 
-Tip: You can install ansible from this [PPA](https://launchpad.net/~rquillo/+archive/ansible): `sudo add-apt-repository ppa:rquillo/ansible` on systems older than Ubuntu 14.04
+Tip: You can install latest ansible from this [PPA](http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-apt-ubuntu):
 
+    sudo apt-get install software-properties-common
+    sudo apt-add-repository ppa:ansible/ansible
+    sudo apt-get update
+    sudo apt-get install ansible
 
 ## Usage
 
