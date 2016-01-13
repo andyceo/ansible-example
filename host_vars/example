@@ -1,0 +1,45 @@
+---
+
+# Ansible settings
+ansible_ssh_port: 22
+ansible_ssh_host: example.com
+ansible_ssh_user: username
+
+# MySQL settings
+mysql:
+  root_password: "!!change_this_password!!"
+  automysqlbackup:
+    enabled: no
+  databases:
+    test1:
+      state: present
+    test2:
+      state: absent
+    test:
+      state: present
+  users:
+    test:
+      password: "!!change_this_password_too!!"
+      priv: 'test.*:ALL'
+  settings:
+    innodb_buffer_pool_size: 100M
+
+# Nginx settings
+nginx:
+  listen:
+    - '*:80'
+  settings:
+    global:
+      worker_processes: 2
+
+vhosts:
+  'example.com':
+    enabled: yes
+    root: /var/www
+    name: example.com
+    aliases:
+      - www.example.com
+    nginx:
+      upstream: no
+      locations: {}
+      settings: ''

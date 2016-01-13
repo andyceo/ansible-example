@@ -1,0 +1,19 @@
+---
+
+- hosts: UniversalWebServer
+  roles:
+    - andyceo.preconf
+    - andyceo.ntp
+    - andyceo.mailutils
+    - andyceo.mc
+    - andyceo.git
+    - andyceo.mysql
+    - andyceo.php
+    - andyceo.composer
+    - andyceo.drush
+    - andyceo.phpmyadmin
+    - andyceo.nginx
+
+  tasks:
+    - name: Entering to tasks section
+      debug: msg="{{ hostvars[inventory_hostname] }}"

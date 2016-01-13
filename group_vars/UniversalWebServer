@@ -1,0 +1,68 @@
+---
+
+
+# Ansible settings
+ansible_ssh_port: 22
+
+
+# Preconf settings (/etc/sysctl.conf)
+preconf:
+  sysctl:
+    fs.inotify.max_user_watches: 524288
+
+
+# Git settings
+git:
+  settings:
+    core:
+      editor: 'mcedit'
+
+
+# MySQL settings
+mysql:
+  root_password: "change_this_password_in_host_vars_file"
+  automysqlbackup:
+    enabled: yes
+  databases:
+    test1:
+      state: absent
+    test2:
+      state: absent
+    phpmyadmin:
+      state: present
+  users:
+    phpmyadmin:
+      password: "change_this_password_in_host_vars_file"
+      priv: 'phpmyadmin.*:ALL'
+
+
+# php settings
+php:
+  install:
+    parts:
+      - cli
+      - fpm
+    modules:
+      - json
+      - curl
+      - gd
+      - mcrypt
+      - intl
+      - mysql
+
+
+# phpMyAdmin settings
+phpmyadmin:
+  dbname: phpmyadmin
+  dbuser: phpmyadmin
+  dbpass: change_this_password_in_host_vars_file
+  webserver:
+
+
+# Nginx settings
+nginx:
+  listen:
+    - '*:80'
+  settings:
+    global:
+      worker_processes: 2

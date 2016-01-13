@@ -4,15 +4,17 @@ import __future__
 import json, sys, getopt, socket
 
 inventory = {
-    'workstations': {
+    'Common': {
         'hosts': [
-            'ubuntu1310'
+            'example'
+        ]
+    },
+    'UniversalWebServer': {
+        'hosts': [
+            'example'
         ]
     }
 }
-
-# Add current local hostname to the hosts list
-inventory['workstations']['hosts'].append(socket.gethostname())
 
 def get_hosts_list():
     hosts = set()
@@ -30,10 +32,14 @@ def get_host_vars(host):
 
 def print_help():
     print('Usage:')
+    print('    hosts.py')
+    print('        Print inventory python dict')
     print('    hosts.py --help')
+    print('        Show this help')
     print('    hosts.py --hosts')
-    print('    hosts.py --list [same as --hosts]')
+    print('        Show list of all hosts')
     print('    hosts.py --host <hostname>')
+    print('        Return json object with variables for given host. Can be empty')
 
 
 ########################################################
