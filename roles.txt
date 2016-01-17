@@ -16,3 +16,4 @@ andyceo.memcached
 andyceo.redis
 andyceo.vsftpd
 andyceo.docker
+andyceo.asterisk
