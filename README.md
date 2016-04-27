@@ -19,6 +19,14 @@ Tip: You can install latest ansible from this [PPA](http://docs.ansible.com/ansi
     sudo apt-get update
     sudo apt-get install ansible
 
+Tip: Authentication with passphrase protected private-key require to enter passphrase for each server. You should execute following on the manager machine:
+
+    ssh-agent bash
+    ssh-add ~/.ssh/id_rsa
+
+Then, execute playbooks.
+
+
 ## Usage
 
 1. Install ansible on your manager machine:
