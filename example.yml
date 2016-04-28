@@ -6,11 +6,10 @@
     - andyceo.preconf
 
   tasks:
-    - name: Hello world!
+    - name: DEBUG - print host names
       debug:
-        msg="System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }}"
-      sudo: yes
+        msg="Host {{ ansible_hostname }} has inventory hostname {{ inventory_hostname }}, has uuid {{ ansible_product_uuid }}"
 
-    - name: Display all variables/facts known for a host
+    - name: DEBUG - display all variables/facts known for a host
       debug:
         var=hostvars[inventory_hostname]
