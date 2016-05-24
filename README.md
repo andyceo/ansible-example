@@ -68,3 +68,31 @@ Then, execute playbooks.
     - Execute playbook with dynamic inventory:
 
         ansible-playbook -K -k -v -i hosts.py -l example example.yml
+
+
+## Variables
+
+### vhosts
+
+This is cross-role variable, at least three roles use it: [andyceo.apache](https://galaxy.ansible.com/andyceo/apache/), [andyceo.nginx](https://galaxy.ansible.com/andyceo/nginx/), [andyceo.letsencrypt](https://galaxy.ansible.com/andyceo/letsencrypt/).
+
+`vhosts` is a dict were key is a filename were virtual host configuration will be stored, and value (the dict), which represents basic virtual host configuration:
+
+    ---
+    
+    vhosts:
+      www.example.com:
+        enabled: yes
+        name: www.example.com
+        aliases:
+          - example.com
+        root: /var/www/example.com
+      www.example.org:
+        enabled: yes
+        name: www.example.org
+        aliases:
+          - example.org
+          - m.example.org
+        root: /var/www/example.org
+
+Also, each virtual host can have additional variables for [andyceo.apache](https://galaxy.ansible.com/andyceo/apache/) and [andyceo.nginx](https://galaxy.ansible.com/andyceo/nginx/) roles.
