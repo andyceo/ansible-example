@@ -47,6 +47,10 @@ Then, execute playbooks.
 
         ansible-galaxy install -r roles.txt --force
 
+  Note that you can install particular role as git submodule:
+
+        git submodule add -f git@github.com:andyceo/ansible-role-preconf.git roles/andyceo.preconf
+
 5. Add your target (remote) host name you want to operate with (for example, `example`) to inventory file: `ansible/hosts` or `ansible/hosts.py` (dynamic inventory)
 
 6. Add file with your desirable config to `ansible/host_vars/example`. Use `ansible/host_vars/example` as example
