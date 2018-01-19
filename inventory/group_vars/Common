@@ -1,8 +1,0 @@
----
-
-# This variables will be set for all hosts in this group
-
-# Ansible settings
-ansible_ssh_port: 22
-
-some_variable: value

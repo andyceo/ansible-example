@@ -4,7 +4,7 @@ import __future__
 import json, sys, getopt, socket
 
 inventory = {
-    'Common': {
+    'common': {
         'hosts': [
             'example'
         ]

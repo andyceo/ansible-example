@@ -1,0 +1,4 @@
+---
+
+# Ansible settings
+ansible_ssh_port: 22
