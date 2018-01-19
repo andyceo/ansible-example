@@ -1,0 +1,65 @@
+---
+
+- hosts: servers
+  become: yes
+
+
+  pre_tasks:
+
+    - name: DEBUG - entering pre-tasks
+      debug:
+        msg="Host {{ ansible_hostname }} has inventory hostname {{ inventory_hostname }}, has uuid {{ ansible_product_uuid }}"
+      tags:
+        - init
+
+
+  roles:
+    - role: andyceo.preconf
+      tags:
+        - preconf
+        - init
+
+    - role: andyceo.users
+      tags:
+        - users
+        - init
+
+    - role: andyceo.ntp
+      tags:
+        - ntp
+        - init
+
+    - role: andyceo.mailutils
+      tags:
+        - mailutils
+
+    - role: andyceo.git
+      tags:
+        - git
+
+    - role: andyceo.configurator
+      tags:
+        - configurator
+
+    - role: andyceo.docker
+      tags:
+        - docker
+
+    - role: andyceo.telegraf
+      tags:
+        - telegraf
+
+
+  tasks:
+    - name: Entering to tasks section
+      debug: msg="Host {{ ansible_hostname }} has inventory hostname {{ inventory_hostname }}, has uuid {{ ansible_product_uuid }}"
+      tags:
+        - init
+
+
+  post_tasks:
+
+    - name: DEBUG - entering post-tasks
+      debug: msg="Host {{ ansible_hostname }} has inventory hostname {{ inventory_hostname }}, has uuid {{ ansible_product_uuid }}"
+      tags:
+        - init
