@@ -6,4 +6,4 @@
   install:
   - pip install ansible-lint
   script:
-    - ansible-lint ./
+    - ansible-lint *.yml
