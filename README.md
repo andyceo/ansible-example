@@ -5,19 +5,12 @@ This is the example of ansible repository that shows how to organize managing yo
 
 ## System requirements
 
-This version of playbooks and roles was tested only on:
+This version of playbooks and roles was last tested on:
 
-  - Ubuntu 14.04
-  - Ansible 1.5.4 (shipped with Ubuntu 14.04 with enabled backports)
+  - Ubuntu 16.04.04
+  - Ansible 2.4.3.0 (available with [official PPA](https://launchpad.net/~ansible/+archive/ubuntu/ansible), see [installation instruction for Ubuntu](http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-apt-ubuntu))
 
 Previous versions of Ansible and Ubuntu are not supported. If you interested in its support, please, provide patches.
-
-Tip: You can install latest ansible from this [PPA](http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-apt-ubuntu):
-
-    sudo apt-get install software-properties-common
-    sudo apt-add-repository ppa:ansible/ansible
-    sudo apt-get update
-    sudo apt-get install ansible
 
 Tip: Authentication with passphrase protected private-key require to enter passphrase for each server. You should execute following on the manager machine:
 
