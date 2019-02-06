@@ -8,7 +8,9 @@
 
     - name: DEBUG - entering pre-tasks
       debug:
-        msg="Host {{ ansible_hostname }} has inventory hostname {{ inventory_hostname }}, has uuid {{ ansible_product_uuid }}"
+        msg: >-
+          Host {{ ansible_hostname }} has inventory hostname {{ inventory_hostname }},
+          has uuid {{ ansible_product_uuid }}
       tags:
         - init
 
@@ -52,7 +54,10 @@
 
   tasks:
     - name: Entering to tasks section
-      debug: msg="Host {{ ansible_hostname }} has inventory hostname {{ inventory_hostname }}, has uuid {{ ansible_product_uuid }}"
+      debug:
+        msg: >-
+          Host {{ ansible_hostname }} has inventory hostname {{ inventory_hostname }},
+          has uuid {{ ansible_product_uuid }}
       tags:
         - init
 
@@ -60,6 +65,9 @@
   post_tasks:
 
     - name: DEBUG - entering post-tasks
-      debug: msg="Host {{ ansible_hostname }} has inventory hostname {{ inventory_hostname }}, has uuid {{ ansible_product_uuid }}"
+      debug:
+        msg: >-
+          Host {{ ansible_hostname }} has inventory hostname {{ inventory_hostname }},
+          has uuid {{ ansible_product_uuid }}
       tags:
         - init
