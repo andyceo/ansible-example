@@ -3,6 +3,10 @@
   language: python
   python:
     - "3.7"
+  addons:
+    apt:
+      packages:
+        - nginx
   install:
     - pip install ansible-lint
   script:
