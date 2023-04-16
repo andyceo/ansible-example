@@ -26,11 +26,6 @@
         - users
         - init
 
-    - role: andyceo.ntp
-      tags:
-        - ntp
-        - init
-
     - role: andyceo.mailutils
       tags:
         - mailutils

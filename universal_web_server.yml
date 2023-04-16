@@ -3,7 +3,6 @@
 - hosts: UniversalWebServer
   roles:
     - andyceo.preconf
-    - andyceo.ntp
     - andyceo.mailutils
     - andyceo.mc
     - andyceo.git
